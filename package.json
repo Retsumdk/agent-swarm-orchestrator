@@ -1,17 +1,50 @@
 {
   "name": "agent-swarm-orchestrator",
-  "description": "Dynamic multi-agent swarm orchestration with optimized resource allocation and conflict resolution",
   "version": "1.0.0",
+  "description": "Dynamic multi-agent swarm orchestration with greedy weighted scheduling, resource-aware allocation, lock-based conflict resolution, and retry with exponential backoff",
+  "keywords": [
+    "ai",
+    "agents",
+    "swarm",
+    "orchestration",
+    "scheduler",
+    "task-queue",
+    "multi-agent"
+  ],
+  "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "agent-swarm-orchestrator": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc",
     "test": "bun test",
-    "build": "tsc"
+    "demo": "node dist/cli.js demo",
+    "prepare": "tsc -p tsconfig.build.json"
   },
-  "dependencies": {
-    "commander": "^11.1.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Retsumdk/agent-swarm-orchestrator.git"
   },
+  "author": "Retsumdk",
   "devDependencies": {
-    "bun-types": "^1.0.0",
-    "typescript": "^5.3.0"
+    "@types/node": "^24.10.1",
+    "bun-types": "^1.3.10",
+    "typescript": "^5.9.3"
   }
 }
