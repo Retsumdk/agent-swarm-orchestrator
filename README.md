@@ -74,6 +74,8 @@ Each tick has `budgetPerTick` points. A task costs its `weight`. Work is allocat
 npm install github:Retsumdk/agent-swarm-orchestrator
 ```
 
+To pin the tagged release, append the tag: `npm install github:Retsumdk/agent-swarm-orchestrator#v1.0.0` (see the [v1.0.0 release](https://github.com/Retsumdk/agent-swarm-orchestrator/releases/tag/v1.0.0) and the [CHANGELOG](./CHANGELOG.md)).
+
 (Bun users: `bun add github:Retsumdk/agent-swarm-orchestrator` then `bun pm trust agent-swarm-orchestrator` — Bun blocks git-dependency lifecycle scripts by default, so the package needs an explicit trust step before its `dist/` is built.)
 
 **Or clone and build:**
